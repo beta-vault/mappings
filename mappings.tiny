@@ -1,80 +1,541 @@
 tiny	2	0	intermediary	named
-c	pq	net/minecraft/world/level/block/entity/SignBlockEntity
-	f	[Ljava/lang/String;	a	lines
 c	hi	net/minecraft/world/level/chunk/Chunk
 	m	(IIILjh;)V	a	addBlockEntity
-		p	4	jh	blockEntity
+		p	4		blockEntity
+		p	1		x
+		p	3		z
+		p	2		y
+	m	(III)I	b	getMetadata
+		p	3	integer3	z
+		p	2	integer2	y
+		p	1	integer1	x
+	m	(III)Ljh;	d	getBlockEntity
+		p	2	integer2	y
+		p	1	integer1	x
+		p	3	integer3	z
+	m	(Ljh;)V	a	a
+		p	1		blockEntity
+	m	(Ldj;[BII)V	<init>	<init>
+		p	1		level
+	f	Ljava/util/Map;	l	blockEntities
+	m	(Ldj;II)V	<init>	<init>
+		p	1		level
+	f	I	j	x
+	f	I	k	z
+c	pq	net/minecraft/world/level/block/entity/SignBlockEntity
+	f	[Ljava/lang/String;	a	lines
+c	pt	net/minecraft/world/level/block/FireBlock
+	m	(III)V	a	registerFlammable
+		p	1	integer1	id
+	m	(II)V	<init>	<init>
+		p	1	integer1	id
+c	hl	net/minecraft/world/entity/LivingEntity
+	m	(I)V	b	addHealth
+		p	1	integer	health
+	m	()I	j	getDeathLoot
+	f	I	ag	deathTime
+	f	Ljava/lang/String;	R	texture
+	f	I	ah	attackTime
+	m	()Ljava/lang/String;	h	getHurtSound
+	m	(Llq;FF)V	a	a
+		p	1		entity
+	m	()Ljava/lang/String;	i	getDeathSound
+	f	I	ab	health
+	m	()Ljava/lang/String;	g	getAmbientSound
+	f	I	ad	hurtTime
+	m	()F	k	getSoundVolume
+c	pv	net/minecraft/server/network/protocol/ClientboundDisconnectPacket
+	m	(Ljava/lang/String;)V	<init>	<init>
+		p	1	string	reason
+	f	Ljava/lang/String;	a	reason
+c	hn	net/minecraft/world/item/BlockItem
+	m	(ILna;)V	<init>	<init>
+		p	2	na	block
+		p	1	integer	id
+	f	I	a	blockId
+c	px	net/minecraft/world/item/FoodItem
+	m	()I	k	getHealthRestored
+	m	(IIZ)V	<init>	<init>
+		p	2	integer2	healthRestored
+		p	1	integer1	id
+	f	I	a	healthRestored
+c	hp	net/minecraft/world/container/Container
+	m	()Ljava/lang/String;	c	getName
+	m	(II)Lfy;	a	removeItem
+		p	2	integer2	amount
+		p	1	integer1	slot
+	m	(I)Lfy;	d_	getItemInSlot
+		p	1		slot
+	m	(ILfy;)V	a	setItem
+		p	1	integer	slot
+		p	2	fy	itemStack
+	m	()I	a	getContainerSize
+c	hr	net/minecraft/world/level/block/Glowstone
+c	hv	net/minecraft/nbt/LongTag
+	f	J	a	value
+c	hz	net/minecraft/world/inventory/CraftingContainer
+	f	[Lfy;	a	items
+c	ig	net/minecraft/world/level/block/GravelBlock
+c	ih	net/minecraft/world/item/crafting/DyeRecipes
+	m	(Ley;)V	a	registerAll
+		p	1	ey	recipeManaager
+c	af	af
+	m	(Ljava/lang/String;Lmb;)V	<init>	<init>
+		p	2		source
+c	iq	net/minecraft/nbt/CompoundTag
+	m	(Ljava/lang/String;I)V	a	putInt
+		p	2		value
+		p	1		key
+	m	(Ljava/lang/String;)Z	b	contains
+		p	1		key
+	f	Ljava/util/Map;	a	tags
+	m	(Ljava/lang/String;S)V	a	putShort
+		p	2		value
+		p	1		key
+	m	(Ljava/lang/String;)B	c	getByte
+		p	1		key
+	m	(Ljava/lang/String;)F	g	getFloat
+		p	1		key
+	m	(Ljava/lang/String;)J	f	getLong
+		p	1		key
+	m	(Ljava/lang/String;B)V	a	putByte
+		p	1		key
+		p	2		value
+	m	(Ljava/lang/String;D)V	a	putDouble
+		p	1		key
+		p	2		value
+	m	(Ljava/lang/String;Ljava/lang/String;)V	a	putString
+		p	2		value
+		p	1		key
+	m	(Ljava/lang/String;)S	d	getShort
+		p	1		key
+	m	(Ljava/lang/String;F)V	a	putFloat
+		p	1		key
+		p	2		value
+	m	(Ljava/lang/String;Liq;)V	a	putCompound
+		p	1		key
+		p	2		value
+	m	(Ljava/lang/String;J)V	a	putLong
+		p	1		key
+		p	2		value
+	m	(Ljava/lang/String;)D	h	getDouble
+		p	1		key
+	m	(Ljava/lang/String;)Llr;	l	getList
+		p	1		key
+	m	(Ljava/lang/String;)Liq;	k	getCompound
+		p	1		key
+	m	(Ljava/lang/String;)Ljava/lang/String;	i	getString
+		p	1		key
+	m	(Ljava/lang/String;)[B	j	getByteArray
+		p	1		key
+	m	(Ljava/lang/String;)I	e	getInt
+		p	1		key
+	m	(Ljava/lang/String;Z)V	a	putBoolean
+		p	2		value
+		p	1		key
+	m	()Ljava/util/Collection;	c	values
+	m	(Ljava/lang/String;Lfo;)V	a	put
+		p	1		key
+		p	2		tag
+	m	(Ljava/lang/String;[B)V	a	putByteArray
+		p	1		key
+		p	2		value
+	m	(Ljava/lang/String;)Z	m	getBoolean
+		p	1		key
+c	ak	net/minecraft/world/level/block/entity/DispenserBlockEntity
+	f	[Lfy;	a	items
+	f	Ljava/util/Random;	b	random
+c	al	net/minecraft/world/item/BucketItem
+	f	I	a	liquidId
+	m	(II)V	<init>	<init>
+		p	1	integer1	id
+		p	2	integer2	liquidId
+c	iv	net/minecraft/server/network/protocol/BidirectionalLoginPacket
+	f	J	c	seed
+	f	I	a	entityId
+	f	Ljava/lang/String;	b	username
+	f	B	d	dimension
+	m	(Ljava/lang/String;IJB)V	<init>	<init>
+		p	1		username
+		p	2		entityId
+		p	3		seed
+		p	5		dimension
+c	ao	net/minecraft/world/entity/animal/Animal
+c	ay	net/minecraft/util/Vec3i
+	f	I	b	y
+	f	I	a	x
+	f	I	c	z
+	m	(III)V	<init>	<init>
+		p	2	integer2	y
+		p	1	integer1	x
+		p	3	integer3	z
+	m	(Ljava/lang/Object;)Z	equals	equals
+		p	1	object	object
+	m	(Ljava/lang/Object;)I	compareTo	compareTo
+		p	1	ay	other
+	m	(Lay;)V	<init>	<init>
+		p	1	ay	other
+	m	(III)D	a	distanceTo
 		p	1	integer1	x
 		p	3	integer3	z
 		p	2	integer2	y
-	m	(Ljh;)V	a	a
-		p	1	jh	blockEntity
-	m	(Ldj;[BII)V	<init>	<init>
-		p	1	dj	level
-	f	Ljava/util/Map;	l	blockEntities
-	m	(Ldj;II)V	<init>	<init>
-		p	1	dj	level
-	f	I	j	x
-	f	I	k	z
+c	jh	net/minecraft/world/level/block/entity/BlockEntity
+	m	()Z	g	isRemoved
+	m	()V	g_	tick
+	f	I	g	z
+	m	()Lgt;	f	getUpdatePacket
+	m	(Liq;)Ljh;	c	create
+		p	0		compound
+	f	I	f	y
+	f	I	e	x
+	f	Ldj;	d	level
+	m	(Ljava/lang/Class;Ljava/lang/String;)V	a	register
+		p	1		id
+		p	0		clazz
+	m	()V	h	setRemoved
+	m	()V	j	clearRemoved
+	f	Z	h	removed
+	m	(Liq;)V	b	load
+		p	1		compound
+	f	Ljava/util/Map;	a	idToClass
+	m	(Liq;)V	a	read
+		p	1		compound
+	f	Ljava/util/Map;	b	classToId
+		c	This seems to be broken as the key is a class, but this method assumes it to be a string.
+c	ba	net/minecraft/util/Vec3d
+	f	D	c	z
+	m	(DDD)Lba;	c	add
+	m	(DDD)Lba;	b	create
+	f	D	b	y
+	f	D	a	x
+c	jk	net/minecraft/server/network/protocol/BidirectionalChatPacket
+	f	Ljava/lang/String;	a	message
+	m	(Ljava/lang/String;)V	<init>	<init>
+		p	1		message
+c	bd	net/minecraft/world/entity/animal/Cow
+c	jl	net/minecraft/server/network/Connection
+	m	()V	d	close
+	m	(Ljava/net/Socket;Ljava/lang/String;Lme;)V	<init>	<init>
+		p	1		socket
+		p	3		packetListener
+		p	2		name
+	f	Ljava/net/SocketAddress;	i	address
+	m	(Lgt;)V	a	sendPacket
+		p	1		packet
+	f	Ljava/lang/Thread;	s	writeThread
+	m	()Ljava/net/SocketAddress;	c	getAddress
+	m	(Ljava/lang/Exception;)V	a	handleException
+		p	1		exception
+	f	Ljava/io/DataOutputStream;	k	outputStream
+	m	(Lme;)V	a	setListener
+		p	1		listener
+	f	Ljava/io/DataInputStream;	j	inputStream
+	f	Ljava/lang/Object;	a	LOCK
+	f	Ljava/lang/Thread;	r	readThread
+	f	Ljava/lang/Object;	g	lock
+	f	Ljava/net/Socket;	h	socket
+	f	Lme;	p	packetListener
+c	bf	net/minecraft/world/item/MushroomStewItem
+	m	(II)V	<init>	<init>
+		p	1	integer1	id
+		p	2	integer2	healthRestored
+c	jq	net/minecraft/nbt/IntTag
+	f	I	a	value
+c	bq	net/minecraft/server/ServerThread
+	m	(Ljava/lang/String;Lnet/minecraft/server/MinecraftServer;)V	<init>	<init>
+		p	1		name
+		p	2		server
+	f	Lnet/minecraft/server/MinecraftServer;	a	server
+	m	()V	run	run
+c	bt	TimerHackThread
+	m	(Lnet/minecraft/server/MinecraftServer;)V	<init>	<init>
+		p	1		server
+	f	Lnet/minecraft/server/MinecraftServer;	a	server
+c	bu	net/minecraft/world/level/block/SoundType
+	f	Ljava/lang/String;	a	key
+	m	(Ljava/lang/String;FF)V	<init>	<init>
+		p	1	string	key
+		p	2	float2	volume
+		p	3	float3	pitch
+	m	()Ljava/lang/String;	c	geyKey
+	m	()F	b	getPitch
+	f	F	b	volume
+	m	()F	a	getVolume
+	f	F	c	pitch
+c	bx	net/minecraft/world/level/block/entity/SpawnerBlockEntity
+c	kb	net/minecraft/nbt/ByteTag
+	f	B	a	value
+	m	(B)V	<init>	<init>
+		p	1		value
+c	cg	net/minecraft/world/level/block/LadderBlock
+	m	(II)V	<init>	<init>
+		p	1	integer1	id
+c	ci	net/minecraft/server/gui/LogHandler
+	m	()V	flush	flush
+	m	(Ljava/util/logging/LogRecord;)V	publish	publish
+		p	1		record
+	m	(Ljavax/swing/JTextArea;)V	<init>	<init>
+		p	1		textArea
+	m	()V	close	close
+	f	Ljavax/swing/JTextArea;	d	testArea
+	f	Ljava/util/logging/Formatter;	a	formatter
+c	ck	net/minecraft/world/item/crafting/Recipe
+	m	()I	a	getSize
+	m	()Lfy;	b	getResult
+	m	(Lhz;)Lfy;	b	assemble
+		p	1	hz	container
+	m	(Lhz;)Z	a	matches
+		p	1	hz	container
+c	i	net/minecraft/server/gui/PlayerListComponent
+	m	(Lnet/minecraft/server/MinecraftServer;)V	<init>	<init>
+		p	1		server
+	f	Lnet/minecraft/server/MinecraftServer;	a	server
+	f	I	b	tickCount
+c	k	net/minecraft/nbt/FloatTag
+	f	F	a	value
+c	cq	net/minecraft/world/level/block/WoolBlock
+c	ky	net/minecraft/server/ServerProperties
+	m	()V	a	generate
+	m	(Ljava/lang/String;Z)V	b	set
+		p	2		value
+		p	1		key
+	m	()V	b	save
+	m	(Ljava/io/File;)V	<init>	<init>
+		p	1		file
+	m	(Ljava/lang/String;I)I	a	get
+		p	1		key
+		p	2		fallback
+	m	(Ljava/lang/String;Z)Z	a	get
+		p	2		fallback
+		p	1		key
+	m	(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;	a	get
+		p	1		key
+		p	2		fallback
+	f	Ljava/io/File;	c	file
+	f	Ljava/util/Properties;	b	properties
+	f	Ljava/util/logging/Logger;	a	LOGGER
+c	cr	net/minecraft/world/level/block/entity/JukeboxBlockEntity
+c	q	net/minecraft/server/gui/GuiCloseListener
+	f	Lnet/minecraft/server/MinecraftServer;	a	server
+	m	(Ljava/awt/event/WindowEvent;)V	windowClosing	windowClosing
+		p	1		event
+	m	(Lnet/minecraft/server/MinecraftServer;)V	<init>	<init>
+		p	1		server
+c	ct	net/minecraft/world/level/storage/LevelData
+	m	(JLjava/lang/String;)V	<init>	<init>
+		p	1		seed
+		p	3		name
+	m	(III)V	a	setSpawn
+		p	3		z
+		p	2		y
+		p	1		x
+	m	()I	k	getThunderTime
+	m	(Z)V	b	setRaining
+		p	1		raining
+	m	()I	m	getRainTime
+	m	()Z	j	isThundering
+	f	Z	l	raining
+	m	(I)V	a	setVersion
+		p	1		version
+	f	Z	n	thundering
+	m	(J)V	b	setSizeOnDisk
+		p	1		size
+	m	(I)V	c	setRainTime
+		p	1		rainTime
+	f	I	b	spawnX
+	m	()I	c	getSpawnX
+	f	I	d	spawnZ
+	f	J	f	lastPlayed
+	f	Ljava/lang/String;	j	name
+	m	()I	e	getSpawnZ
+	m	()J	g	getSizeOnDisk
+	m	()I	i	getVersion
+	f	I	k	version
+	m	(Z)V	a	setThundering
+		p	1		thundering
+	f	I	m	rainTime
+	f	I	o	thunderTime
+	m	(Ljava/lang/String;)V	a	setName
+		p	1		name
+	m	()Z	l	isRaining
+	m	(J)V	a	setTime
+		p	1		time
+	m	(I)V	b	setThunderTime
+		p	1		thunderTime
+	f	J	a	seed
+	m	(Lct;)V	<init>	<init>
+		p	1		levelData
+	m	()J	b	getSeed
+	f	I	c	spawnY
+	f	J	e	time
+	m	()I	d	getSpawnY
+	m	()J	f	getTime
+	f	J	g	sizeOnDisk
+	f	Liq;	h	playerData
+	m	(Liq;)V	<init>	<init>
+		p	1		compound
+	m	()I	h	getDimension
+	f	I	i	dimension
+c	cu	net/minecraft/server/network/ServerConnectionListener
+	m	(Lee;)V	a	addPending
+		p	1		connection
+	f	Ljava/util/ArrayList;	h	listeners
+	f	Ljava/util/ArrayList;	g	pendingConnections
+	f	Lnet/minecraft/server/MinecraftServer;	c	server
+	f	Z	b	running
+	f	Ljava/net/ServerSocket;	d	socket
+	f	Ljava/lang/Thread;	e	listenThread
+	m	()V	a	tick
+	f	I	f	counter
+	m	(Lnet/minecraft/server/MinecraftServer;Ljava/net/InetAddress;I)V	<init>	<init>
+		p	1		server
+		p	3		port
+		p	2		address
+	m	(Lha;)V	a	addListener
+		p	1		listener
+	f	Ljava/util/logging/Logger;	a	LOGGER
+c	r	net/minecraft/server/gui/CommandAction
+	f	Lnf;	b	gui
+	f	Ljavax/swing/JTextField;	a	textField
+	m	(Lnf;Ljavax/swing/JTextField;)V	<init>	<init>
+		p	2		textField
+		p	1		gui
+	m	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
+		p	1		event
+c	s	net/minecraft/server/gui/FocusListener
+	m	(Lnf;)V	<init>	<init>
+		p	1		gui
+	m	(Ljava/awt/event/FocusEvent;)V	focusGained	focusGained
+		p	1		event
+	f	Lnf;	a	gui
+c	cv	net/minecraft/server/network/UsernameVerificationThread
+	f	Liv;	a	loginPacket
+	m	(Lee;Liv;)V	<init>	<init>
+		p	1		connection
+		p	2		loginPacket
+	m	()V	run	run
+	f	Lee;	b	connection
+c	cx	net/minecraft/world/level/block/StoneBlock
+c	lb	net/minecraft/world/level/block/EntityBlock
+	m	()Ljh;	a_	createBlockEntity
+c	lc	net/minecraft/world/item/CoalItem
+c	ld	net/minecraft/server/network/ConnectionListenThread
+	m	(Lcu;Ljava/lang/String;Lnet/minecraft/server/MinecraftServer;)V	<init>	<init>
+		p	1		connectionListener
+		p	2		name
+		p	3		server
+	f	Lcu;	b	connectionListener
+	m	()V	run	run
+	f	Lnet/minecraft/server/MinecraftServer;	a	server
+c	lg	SaddleItem
 c	ln	net/minecraft/world/level/block/entity/FurnaceBlockEntity
 c	dg	Tickable
 	m	()V	a	tick
-c	hl	LivingEntity
-	f	I	ag	deathTime
-	f	I	ah	attackTime
-	m	(Llq;FF)V	a	a
-		p	1		entity
-	f	I	ab	health
-	f	I	ad	hurtTime
 c	lq	net/minecraft/world/entity/Entity
-	m	(Ldj;)V	<init>	<init>
-		p	1		level
+	m	(DDD)D	e	distanceSquared
+		p	1	double1	x
+		p	3	double2	y
+		p	5	double3	z
+	f	F	aV	yaw
+	f	I	by	fireTicks
 	f	D	aR	posZ
+	m	(Llq;)V	b	b
+		p	1	lq	entity
+	m	(Liq;)V	a	load
+		p	1	iq	compound
+	f	F	aX	lastYaw
+	m	(Lem;)Z	a	mobInteract
+		p	1	em	player
+	m	(Llq;)D	g	distanceSquared
+		p	1	lq	entity
+	f	D	aP	posX
+	f	D	aN	lastY
+	f	I	aG	id
+	f	I	a	ENTITY_COUNTER
+	m	(Liq;)V	b	save
+		p	1	iq	compound
+	f	F	aW	pitch
+	m	(DDD)D	f	distance
+		p	1	double1	x
+		p	3	double2	y
+		p	5	double3	z
 	m	(Ldj;)V	a	a
 		p	1		level
-	f	I	aG	id
+	f	F	aY	lastPitch
 	m	(Ljava/lang/Object;)Z	equals	equals
 		p	1		object
-	f	Ldj;	aL	level
+	f	D	aM	lastX
+	m	(Llq;)F	f	distance
+		p	1	lq	entity
 	f	D	aQ	posY
-	f	D	aP	posX
+	f	D	aO	lastZ
+	m	(Ldj;)V	<init>	<init>
+		p	1		level
+	m	(Llq;I)Z	a	a
+		p	1	lq	entity
+	f	Lmo;	bE	entityData
+	f	F	bi	height
+	f	Ldj;	aL	level
 	f	Ljava/util/Random;	bv	random
-	f	I	a	ENTITY_COUNTER
-c	lr	net/minecraft/nbt/ListTag
 c	dj	net/minecraft/world/level/Level
 	f	Ljava/util/Random;	r	random
+	m	(II)Lhi;	c	getChunk
 	f	Ljava/util/List;	d	players
-	f	Lct;	x	levelData
-	m	(Lom;Ljava/lang/String;JLos;)V	<init>	<init>
-		p	2	string	name
-		p	3	long3	seed
+	f	I	h	addend
+	m	(DDDLjava/lang/String;FF)V	a	playSound
+	m	(Lba;Lba;Z)Lnh;	a	rayTrace
 	m	(ZLpj;)V	a	save
 	m	(Llq;Z)V	a	a
-		p	1	lq	entity
+		p	1		entity
+	m	(III)Z	f	isAir
+		p	2	integer2	y
+		p	1	integer1	x
+		p	3	integer3	z
 	m	()J	m	getTime
-c	hp	hp
-	m	(I)Lfy;	d_	getItemInSlot
-		p	1	integer	slot
-	m	()I	a	getSize
-c	dl	ServerPlayer
+	m	(IIII)Z	e	setBlock
+		p	1	integer1	x
+		p	2	integer2	y
+		p	3	integer3	z
+		p	4	integer4	metadata
+	f	Z	B	isClientSize
+	m	(IIIII)Z	b	setBlock
+		p	5	integer5	metadata
+		p	3	integer3	z
+		p	4	integer4	id
+		p	1	integer1	x
+		p	2	integer2	y
+	f	Lct;	x	levelData
+	m	(Lom;Ljava/lang/String;JLos;)V	<init>	<init>
+		p	2		name
+		p	3		seed
+c	lr	net/minecraft/nbt/ListTag
+	m	(Lfo;)V	a	add
+		p	1	fo	tag
+	m	(I)Lfo;	a	get
+		p	1	integer	index
+	f	B	b	type
+	m	()I	c	size
+	f	Ljava/util/List;	a	tags
+c	dl	net/minecraft/server/level/ServerPlayer
 	m	(Lnet/minecraft/server/MinecraftServer;Ldj;Ljava/lang/String;Lpu;)V	<init>	<init>
 		p	2		level
-		p	3	string	name
+		p	3		name
 		p	1		server
 	m	(Ljh;)V	a	a
-		p	1	jh	blockEntity
-	f	Lha;	a	connection
+		p	1		blockEntity
 	f	Lnet/minecraft/server/MinecraftServer;	b	server
-c	lx	net/minecraft/nbt/DoubleTag
-	m	(D)V	<init>	<init>
-		p	1	double1	value
-	f	D	a	value
+	f	Lha;	a	connection
+c	dn	net/minecraft/world/level/block/CraftingTableBlock
+	m	(I)V	<init>	<init>
+		p	1	integer	id
 c	dp	ServerLevel
-	f	Lnet/minecraft/server/MinecraftServer;	F	server
 	m	(Lnet/minecraft/server/MinecraftServer;Lom;Ljava/lang/String;IJ)V	<init>	<init>
 		p	1		server
-c	hv	net/minecraft/nbt/LongTag
-	f	J	a	value
+	f	Lnet/minecraft/server/MinecraftServer;	F	server
+c	lx	net/minecraft/nbt/DoubleTag
+	m	(D)V	<init>	<init>
+		p	1		value
+	f	D	a	value
 c	mb	CommandSource
 	m	(Ljava/lang/String;)V	b	sendMessage
 		p	1		message
@@ -90,20 +551,12 @@ c	mc	Commands
 	m	(Ljava/lang/String;I)I	a	parseInt
 		p	1		value
 		p	2		fallback
-c	me	net/minecraft/server/network/protocol/ServerPacketListener
-	m	(Lew;)V	a	handleSetTime
-	m	(Ljk;)V	a	handleChat
-		p	1		packet
-	m	(Liv;)V	a	handleLogin
-		p	1	iv	packet
-	m	(Lgt;)V	a	handlePacket
-		p	1		packet
 c	net/minecraft/server/MinecraftServer	net/minecraft/server/MinecraftServer
 	f	[Lnl;	k	entityTrackers
 	f	Ljava/util/logging/Logger;	a	LOGGER
 	f	Ljava/util/List;	s	commandQueue
-	m	()V	run	runServer
 	f	Lcu;	c	connectionListener
+	m	()V	run	runServer
 	f	[Ldp;	e	levels
 	m	()V	b	handleConsoleInputs
 	f	Z	g	stopped
@@ -115,334 +568,638 @@ c	net/minecraft/server/MinecraftServer	net/minecraft/server/MinecraftServer
 		p	1		message
 	f	Z	q	running
 	f	Z	o	allowFlight
-	f	Z	m	spawnAnimals
 	f	Lmc;	p	commands
-	m	()V	f	saveChunks
+	f	Z	m	spawnAnimals
 	f	Lfc;	f	playerList
+	m	()V	f	saveChunks
 	m	(Ljava/lang/String;)Ljava/io/File;	a	getFile
 		p	1		path
-	f	Ljava/util/List;	r	tickables
 	f	Lky;	d	properties
+	f	Ljava/util/List;	r	tickables
+	m	()V	a	stopTicking
 	m	(Ldg;)V	a	addTickable
 		p	1		tickable
-	m	()V	a	stopTicking
 	m	()Z	c	initServer
 	f	Z	n	pvp
 	f	Z	l	onlineMode
 	m	([Ljava/lang/String;)V	main	main
 		p	0		args
 	m	()V	g	stopServer
+c	me	net/minecraft/server/network/protocol/ServerPacketListener
+	m	(Lpv;)V	a	handleDisconnect
+	m	(Lew;)V	a	handleSetTime
+	m	(Ljk;)V	a	handleChat
+		p	1		packet
+	m	(Liv;)V	a	handleLogin
+		p	1		packet
+	m	(Lgt;)V	a	handlePacket
+		p	1		packet
 c	mf	net/minecraft/world/level/block/entity/NoteBlockEntity
 c	mg	mg
 	m	(Lhi;Ldj;Liq;)V	a	a
-		p	0	hi	chunk
-		p	1	dj	level
-		p	2	iq	compound
+		p	0		chunk
+		p	1		level
+		p	2		compound
+c	ml	net/minecraft/world/item/crafting/ShapelessRecipe
+	f	Ljava/util/List;	b	components
+	m	(Lfy;Ljava/util/List;)V	<init>	<init>
+		p	1	fy	result
+		p	2	list	components
+	f	Lfy;	a	result
 c	ee	net/minecraft/server/network/PendingConnection
 	m	(Liv;)V	b	spawnPlayer
-		p	1	iv	packet
+		p	1		packet
 	f	Lnet/minecraft/server/MinecraftServer;	e	server
 	f	Ljava/util/Random;	d	RANDOM
 	f	Ljava/lang/String;	i	serverId
-	f	Liv;	h	loginPacket
+	m	(Ljava/lang/String;)V	a	disconnect
+		p	1		reason
 	m	(Lnet/minecraft/server/MinecraftServer;Ljava/net/Socket;Ljava/lang/String;)V	<init>	<init>
 		p	1		server
 		p	2		socket
 		p	3		name
-	m	(Ljava/lang/String;)V	a	disconnect
-		p	1		reason
+	f	Liv;	h	loginPacket
 	f	Ljl;	b	connection
 	f	Ljava/util/logging/Logger;	a	LOGGER
-c	af	af
-	m	(Ljava/lang/String;Lmb;)V	<init>	<init>
-		p	2		source
+c	mo	mo
+	m	(I)B	a	get
+	m	(ILjava/lang/Object;)V	b	set
+c	ej	net/minecraft/world/item/Item
+	m	()Ljava/lang/String;	a	getTranslationKey
+	f	Lej;	aS	FISH
+	f	Lej;	u	STONE_SHOVEL
+	f	Lej;	at	WOODEN_DOOR
+	f	Lej;	T	LEATHER_HELMET
+	f	Lej;	aJ	BOOK
+	f	Lej;	ak	GOLDEN_CHESTPLATE
+	f	Lej;	l	DIAMOND
+	f	Lej;	K	GUNPOWDER
+	f	Lej;	aB	SNOWBALL
+	f	Lej;	ac	IRON_CHESTPLATE
+	f	Lej;	be	MUSIC_DISC_CAT
+	f	Lej;	d	IRON_SHOVEL
+	f	Lej;	C	BOWL
+	f	Lej;	v	STONE_PICKAXE
+	f	Lej;	U	LEATHER_CHESTPLATE
+	f	Lej;	aT	COOKED_FISH
+	f	Lej;	au	BUCKET
+	m	(Ljava/lang/String;)Lej;	a	name
+		p	1	string	name
+	f	Lej;	aK	SLIMEBALL
+	f	Lej;	m	IRON_INGOT
+	f	Lej;	al	GOLDEN_LEGGINGS
+	f	Lej;	L	WOODEN_HOE
+	f	Lej;	aC	BOAT
+	f	Lej;	e	IRON_PICKAXE
+	f	Lej;	ad	IRON_LEGGINGS
+	f	Lej;	D	MUSHROOM_STEW
+	f	Lej;	az	IRON_DOOR
+	f	Lej;	Z	CHAINMAIL_LEGGINGS
+	f	Lej;	aY	BED
+	f	Lej;	R	WHEAT
+	f	Lej;	ar	GOLDEN_APPLE
+	f	Lej;	aQ	CLOCK
+	f	Lej;	s	WOODEN_AXE
+	f	Lej;	j	ARROW
+	f	[Lej;	c	registry
+	f	Lej;	I	STRING
+	f	Lej;	aH	SUGAR_CANE
+	f	Lej;	ai	DIAMOND_BOOTS
+	f	Lej;	A	DIAMOND_AXE
+	f	I	bg	maxStackSize
+	f	Lej;	aa	CHAINMAIL_BOOTS
+	f	Lej;	aZ	REDSTONE_REPEATER
+	m	(Lfy;Lem;Ldj;IIII)Z	a	useOn
+		p	6	integer6	z
+		p	7	integer7	blockFace
+		p	4	integer4	x
+		p	5	integer5	y
+		p	2	em	player
+		p	3	dj	level
+		p	1	fy	itemStack
+	f	Lej;	aR	GLOWSTONE_DUST
+	f	Lej;	as	SIGN
+	f	Lej;	t	STONE_SWORD
+	f	Lej;	S	BREAD
+	f	Lej;	aj	GOLDEN_HELMET
+	f	Lej;	J	FEATHER
+	f	Lej;	aI	PAPER
+	f	Las;	bc	SHEARS
+	f	Lej;	k	COAL
+	f	Lej;	ab	IRON_HELMET
+	f	Lej;	B	STICK
+	f	I	bf	registryId
+	f	Lej;	bd	MUSIC_DISC_13
+	f	Lej;	aA	REDSTONE
+	m	(Lfy;Lhl;)V	a	a
+		p	2	hl	entity
+		p	1	fy	itemStack
+	f	Lej;	y	DIAMOND_SHOVEL
+	f	Lej;	ax	MINECART
+	f	Lej;	X	CHAINMAIL_HELMET
+	m	(Lfy;Ldj;Lem;)Lfy;	a	use
+		p	1	fy	itemStack
+		p	2	dj	level
+		p	3	em	player
+	f	Lej;	q	WOODEN_SHOVEL
+	f	Lej;	P	GOLDEN_HOE
+	f	Lej;	ap	COOKED_PORKCHOP
+	f	Lej;	aW	SUGAR
+	f	Lej;	h	APPLE
+	f	Lej;	G	GOLDEN_PICKAXE
+	f	Lej;	aN	EGG
+	f	Lej;	ao	PORKCHOP
+	f	Lej;	ba	COOKIE
+	f	Lej;	aF	BRICK
+	f	Lej;	ag	DIAMOND_CHESTPLATE
+	f	Lej;	z	DIAMOND_PICKAXE
+	f	Lej;	Y	CHAINMAIL_CHESTPLATE
+	f	Lej;	aX	CAKE
+	f	Lej;	ay	SADDLE
+	f	Lej;	r	WOODEN_PICKAXE
+	f	Lej;	Q	SEEDS
+	f	Ljava/lang/String;	bl	name
+	f	Lej;	aP	FISHING_ROD
+	f	Lej;	aq	PAINTING
+	f	Lej;	i	BOW
+	f	Lej;	ah	DIAMOND_LEGGINGS
+	f	Lej;	H	GOLDEN_AXE
+	f	Ljava/util/Random;	b	RANDOM
+	f	Lej;	aO	COMPASS
+	f	Lej;	aG	CLAY
+	f	Lej;	w	STONE_AXE
+	m	()I	c	getMaxStackSize
+	f	Lej;	o	IRON_SWORD
+	f	Lej;	V	LEATHER_LEGGINGS
+	f	Lej;	av	WATER_BUCKET
+	f	Lej;	aU	DYE
+	m	(I)V	<init>	<init>
+		p	1	integer	id
+	f	Lej;	n	GOLD_INGOT
+	f	Lej;	M	STONE_HOE
+	f	Lej;	aL	CHEST_MINECART
+	f	Lej;	am	GOLDEN_BOOTS
+	f	Lej;	f	IRON_AXE
+	f	Lej;	E	GOLDEN_SWORD
+	f	Lej;	aD	LEATHER
+	f	Lej;	ae	IRON_BOOTS
+	f	Lej;	x	DIAMOND_SWORD
+	f	Lol;	bb	MAP
+	f	Lej;	W	LEATHER_BOOTS
+	f	Lej;	p	WOODEN_SWORD
+	f	Lej;	O	DIAMOND_HOE
+	f	Lej;	aV	BONE
+	f	Lej;	aw	LAVA_BUCKET
+	f	Lej;	g	FLINT_AND_STEEL
+	f	Lej;	N	IRON_HOE
+	f	Lej;	an	FLINT
+	f	Lej;	aM	FURNACE_MINECART
+	m	(Lej;)Lej;	a	a
+		p	1	ej	item
+	f	Lej;	af	DIAMOND_HELMET
+	f	Lej;	F	GOLDEN_SHOVEL
+	f	Lej;	aE	MILK_BUCKET
+c	mt	net/minecraft/world/level/block/SignBlock
+	m	(ILjava/lang/Class;Z)V	<init>	<init>
+		p	1	integer	id
+		p	2	class2	blockEntity
+	f	Ljava/lang/Class;	a	blockEntity
+c	em	net/minecraft/world/entity/player/Player
+	m	(Lln;)V	a	openFurnaceContainer
+		p	1	ln	furnace
+	m	(Lhl;Z)V	a	a
+		p	1	hl	entity
+	m	(Llq;)V	c	mobInteract
+		p	1	lq	entity
+	m	(Lpq;)V	a	openSignEditor
+		p	1	pq	sign
+	m	()Lay;	N	getSpawn
+	m	(Ljava/lang/String;)V	a	sendTranslatedMessage
+		p	1		key
+	f	Lay;	b	spawn
+	m	(Lay;)V	a	setSpawn
+		p	1	ay	spawn
+	m	(ZZZ)V	a	stopSleeping
+	f	I	s	dimension
+	f	Lfx;	i	inventory
+	m	(III)V	b	openCraftingContainer
+		p	1	integer1	x
+		p	2	integer2	y
+		p	3	integer3	z
+	f	Ljava/lang/String;	r	name
+	m	(Lak;)V	a	openDispenserContainer
+		p	1	ak	dispenser
+	f	Z	z	sleeping
+	m	(Lhp;)V	a	openContainer
+		p	1	hp	container
+	m	()V	s	updateHeight
+	m	(Llq;I)V	b	b
+		p	1		entity
+	f	I	a	sleepTimner
 c	mu	net/minecraft/world/level/block/entity/PistonBlockEntity
 	f	F	l	progress
 	f	Z	i	extending
 	f	I	a	blockId
 	f	I	b	blockData
 	f	I	c	facing
-c	iq	net/minecraft/nbt/CompoundTag
-	m	(Ljava/lang/String;I)V	a	putInt
-		p	2	integer	value
-		p	1	string	key
-	m	(Ljava/lang/String;)Z	b	contains
-		p	1	string	key
-	f	Ljava/util/Map;	a	tags
-	m	(Ljava/lang/String;S)V	a	putShort
-		p	2	short2	value
-		p	1	string	key
-	m	(Ljava/lang/String;)F	g	getFloat
-		p	1	string	key
-	m	(Ljava/lang/String;)B	c	getByte
-		p	1	string	key
-	m	(Ljava/lang/String;)J	f	getLong
-		p	1	string	key
-	m	(Ljava/lang/String;B)V	a	putByte
-		p	1	string	key
-		p	2	byte2	value
-	m	(Ljava/lang/String;)S	d	getShort
-		p	1	string	key
-	m	(Ljava/lang/String;Ljava/lang/String;)V	a	putString
-		p	2	string2	value
-		p	1	string1	key
-	m	(Ljava/lang/String;D)V	a	putDouble
-		p	1	string	key
-		p	2	double2	value
-	m	(Ljava/lang/String;Liq;)V	a	putCompound
-		p	1	string	key
-		p	2	iq	value
-	m	(Ljava/lang/String;F)V	a	putFloat
-		p	1	string	key
-		p	2	float2	value
-	m	(Ljava/lang/String;J)V	a	putLong
-		p	1	string	key
-		p	2	long2	value
-	m	(Ljava/lang/String;)D	h	getDouble
-		p	1	string	key
-	m	(Ljava/lang/String;)Llr;	l	getList
-		p	1	string	key
-	m	(Ljava/lang/String;)Liq;	k	getCompound
-		p	1	string	key
-	m	(Ljava/lang/String;)[B	j	getByteArray
-		p	1	string	key
-	m	(Ljava/lang/String;)Ljava/lang/String;	i	getString
-		p	1	string	key
-	m	(Ljava/lang/String;)I	e	getInt
-		p	1	string	key
-	m	(Ljava/lang/String;Z)V	a	putBoolean
-		p	2	boolean2	value
-		p	1	string	key
-	m	()Ljava/util/Collection;	c	values
-	m	(Ljava/lang/String;[B)V	a	putByteArray
-		p	1	string	key
-		p	2	arr	value
-	m	(Ljava/lang/String;Lfo;)V	a	put
-		p	1	string	key
-		p	2	fo	tag
-	m	(Ljava/lang/String;)Z	m	getBoolean
-		p	1	string	key
-c	em	Player
-	f	Ljava/lang/String;	r	name
-	m	(Ljava/lang/String;)V	a	sendTranslatedMessage
-		p	1		key
-	m	(Llq;I)V	b	b
-		p	1		entity
 c	mv	net/minecraft/nbt/ShortTag
 	f	S	a	value
-c	ak	net/minecraft/world/level/block/entity/DispenserBlockEntity
-	f	[Lfy;	a	items
-	f	Ljava/util/Random;	b	random
-c	iv	net/minecraft/server/network/protocol/BidirectionalLoginPacket
-	f	J	c	seed
-	f	I	a	entityId
-	f	Ljava/lang/String;	b	username
-	f	B	d	dimension
-	m	(Ljava/lang/String;IJB)V	<init>	<init>
-		p	1	string	username
-		p	2	integer	entityId
-		p	3	long3	seed
-		p	5	byte4	dimension
+c	ep	net/minecraft/world/entity/monster/Monster
+c	eq	eq
+	m	(Ley;)V	a	a
+		p	1	ey	recipeManager
 c	ev	ev
 	f	Ljava/util/logging/Logger;	a	LOGGER
 c	ew	net/minecraft/server/network/protocol/ClientboundSetTimePacket
 	f	J	a	time
 	m	(J)V	<init>	<init>
-		p	1	long1	time
-c	na	Block
+		p	1		time
+c	na	net/minecraft/world/level/block/Block
+	f	Lna;	ar	TORCH
+	f	Lna;	R	SANDSTONE
+	f	Lna;	aQ	REDSTONE_TORCH
+	f	Lfz;	Z	DEAD_BUSH
+	f	Lna;	az	CRAFTING_TABLE
+	f	Lna;	aY	SUGAR_CANE
+	f	Lbu;	g	GRASS_SOUND
+	f	Lpt;	as	FIRE
+	f	Lna;	bc	NETHERRACK
+	f	Lna;	A	BEDROCK
+	f	Lna;	aa	PISTON
+	f	Lna;	bk	LOCKED_CHEST
+	f	Lna;	I	IRON_ORE
+	f	Lna;	aH	RAIL
+	f	Lna;	ai	GOLD_BLOCK
+	m	(Ldj;III)Z	a	a
+		p	1	dj	level
+		p	2	integer2	x
+		p	3	integer3	y
+		p	4	integer4	z
+	f	Lna;	S	NOTE_BLOCK
+	f	Lna;	aR	LIT_REDSTONE_TORCH
+	f	[Lna;	m	registry
+	f	Lna;	aZ	JUKEBOX
+	f	Lnw;	ae	DANDELION
+	f	Lbu;	h	STONE_SOUND
+	f	Lna;	B	FLOWING_WATER
+	f	Lna;	bd	SOUL_SAND
+	f	Lna;	aA	WHEAT
+	f	Lna;	aj	IRON_BLOCK
+	f	Lna;	J	COAL_ORE
+	f	Lna;	bl	TRAPDOOR
+	f	Lna;	aI	COBBLESTONE_STAIRS
+	m	()Ljava/lang/String;	l	getTranslationKe
+	f	Lna;	aW	CACTUS
+	f	Lna;	ap	MOSSY_COBBLESTONE
+	f	Lna;	P	LAPIS_BLOCK
+	f	Lna;	y	PLANKS
+	f	Lna;	ax	DIAMOND_ORE
+	f	Lna;	X	COBWEB
+	f	Lna;	aF	WOODEN_DOOR
+	f	Lna;	ba	FENCE
+	f	Lna;	aN	WOODEN_PRESSURE_PLATE
+	f	Lna;	ao	BOOKSHELF
+	f	Lna;	bi	REDSTONE_REPEATER
+	f	Lbu;	e	WOOD_SOUND
+	f	Lna;	G	GRAVEL
+	m	(Ldj;IIILjava/util/Random;)V	a	randomTick
+		p	5	random	random
+		p	4	integer4	z
+		p	3	integer3	y
+		p	2	integer2	x
+		p	1	dj	level
+	f	Lna;	Q	DISPENSER
 	m	(ILhj;)V	<init>	<init>
-		p	1	integer	id
+		p	1		id
+	f	Lna;	aP	LIT_REDSTONE_ORE
+	f	Lg;	ab	PISTON_HEAD
+	f	Lna;	aq	OBSIDIAN
+	f	Lna;	z	SAPLING
+	f	Lna;	aX	CLAY
+	f	Lna;	ay	DIAMOND_BLOCK
+	f	Lna;	aG	LADDER
+	f	Ljava/lang/String;	a	key
+	f	Lna;	bb	PUMPKIN
+	f	Lna;	aO	REDSTONE_ORE
+	m	(Ljava/lang/String;)Lna;	a	name
+		p	1	string	name
+	f	Lna;	H	GOLD_ORE
+	f	Lna;	bj	LIT_REDSTONE_REPEATER
+	m	(ILjava/util/Random;)I	a	getBreakLoot
+		p	2	random	random
+	f	Lbu;	f	GRAVEL_SOUND
+	f	Lna;	av	CHEST
+	f	Lna;	V	DETECTOR_RAIL
+	f	Lna;	aU	ICE
+	f	Lnw;	ah	RED_MUSHROOM
+	m	(Ldj;IIILem;)Z	a	use
+		p	3	integer3	y
+		p	4	integer4	z
+		p	1	dj	level
+		p	2	integer2	x
+		p	5	em	player
+	f	Lna;	w	DIRT
+	f	Lna;	bg	JACK_O_LANTERN
+	f	Lna;	E	STILL_LAVA
+	f	Lna;	aD	LIT_FURNACE
+	f	Lbu;	k	WOOL_SOUND
+	m	(Ljava/util/Random;)I	a	a
+		p	1	random	random
+	f	Lna;	M	SPONGE
+	f	Lna;	aL	STONE_PRESSURE_PLATE
+	f	Lna;	am	BRICKS
+	f	Lna;	aV	SNOW_BLOCK
+	f	Lkz;	Y	GRASS
+	f	Lna;	aw	REDSTONE_WIRE
+	f	Lna;	O	LAPIS_ORE
+	f	Lmz;	ad	STICKY_PISTON_HEAD
+	f	Lna;	x	COBBLESTONE
+	f	Lna;	W	STICKY_PISTON
+	f	Lna;	F	SAND
+	f	Lna;	bh	CAKE
+	f	Lar;	L	LEAVES
+	f	Lna;	aE	SIGN
+	f	Lbu;	l	SAND_SOUND
+	f	Lna;	an	TNT
+	f	Lna;	N	GLASS
+	f	Lna;	aM	IRON_DOOR
+	f	Lna;	u	STONE
+	f	Lna;	at	SPAWNER
+	f	Lna;	T	BED
+	f	Lna;	aS	STONE_BUTTON
+	f	Loj;	v	GRASS_BLOCK
+	f	Lnw;	af	ROSE
+	f	Lna;	be	GLOWSTONE
+	f	Lna;	C	STILL_WATER
+	f	Lna;	aB	FARMLAND
+	f	Lna;	ac	WOOL
+	f	Lna;	K	LOG
+	f	Lna;	aJ	WALL_SIGN
+	f	Lna;	ak	DOUBLE_SLAB
+	f	Lna;	U	POWERED_RAIL
+	f	Lna;	aT	SNOW
+	f	Lna;	au	WOOD_STAIRS
+	f	Lnw;	ag	BROWN_MUSHROOM
+	f	Lz;	bf	PORTAL
 	m	(IILhj;)V	<init>	<init>
-		p	1	integer1	od
+		p	1		id
+	f	Lna;	D	FLOWING_LAVA
+	f	Lna;	aC	FURNACE
+	f	Lna;	al	SLAB
+	f	I	bn	id
+	f	Lna;	aK	LEVER
+	m	(Ldj;III)Lcz;	e	e
+		p	2	integer2	x
+		p	3	integer3	y
+		p	1	dj	level
+		p	4	integer4	z
+c	ey	net/minecraft/world/item/crafting/RecipeManager
+	m	()Ljava/util/List;	b	getRecipes
+	f	Ljava/util/List;	b	recipes
+	m	(Lhz;)Lfy;	a	assemble
+		p	1	hz	container
+	m	()Ley;	a	getInstance
+	f	Ley;	a	INSTANCE
+	m	(Lfy;[Ljava/lang/Object;)V	b	registerShapeless
+		p	2	arr	recipe
+		p	1	fy	result
+	m	(Lfy;[Ljava/lang/Object;)V	a	register
+		p	2	arr	recipe
+		p	1	fy	result
+c	ne	net/minecraft/world/entity/monster/Zombie
 c	nf	net/minecraft/server/gui/ServerGui
 	m	()Ljavax/swing/JComponent;	a	buildInfoPanels
+	f	Ljava/util/logging/Logger;	a	LOGGER
 	m	(Lnet/minecraft/server/MinecraftServer;)V	a	showFrameFor
 		p	0		server
-	f	Ljava/util/logging/Logger;	a	LOGGER
 	f	Lnet/minecraft/server/MinecraftServer;	b	server
+	m	()Ljavax/swing/JComponent;	c	buildChatPanels
 	m	(Lnet/minecraft/server/MinecraftServer;)V	<init>	<init>
 		p	1		server
-	m	()Ljavax/swing/JComponent;	c	buildChatPanels
 	m	()Ljavax/swing/JComponent;	b	buildPlayerPanel
+c	ng	net/minecraft/world/level/block/SignItem
+c	nh	net/minecraft/world/phys/BlockHitResult
+	f	Lgd;	a	type
+	f	I	b	x
+	f	Llq;	g	entity
+	f	I	e	blockFace
+	f	I	d	z
+	f	I	c	y
+	f	Lba;	f	position
+	m	(IIIILba;)V	<init>	<init>
+		p	3	integer3	z
+		p	2	integer2	y
+		p	5	ba	position
+		p	4	integer4	face
+		p	1	integer1	x
+	m	(Llq;)V	<init>	<init>
+		p	1	lq	entity
 c	fb	net/minecraft/nbt/ByteArrayTag
 	f	[B	a	value
 c	fc	net/minecraft/server/players/PlayerList
-	f	Ljava/util/Set;	g	ipBans
 	m	(Ljava/lang/String;Lgt;)Z	a	send
-		p	2	gt	packet
-		p	1	string	name
+		p	2		packet
+		p	1		name
+	f	Ljava/util/Set;	g	ipBans
 	f	Ljava/util/Set;	i	whitelst
-	m	(Ldl;)V	b	b
-		p	1	dl	player
 	m	(IIILjh;)V	a	a
-		p	4	jh	blockEntity
-		p	2	integer2	y
-		p	3	integer3	z
-		p	1	integer1	x
-	m	(Ldl;)V	d	d
-		p	1	dl	player
+		p	4		blockEntity
+		p	2		y
+		p	3		z
+		p	1		x
+	m	(Ldl;)V	b	b
+		p	1		player
 	m	(Ldl;Ldp;)V	a	synchronizeTime
-		p	1	dl	player
-		p	2	dp	level
+		p	1		player
+		p	2		level
+	m	(Ldl;)V	d	d
+		p	1		player
 	f	Ljava/util/logging/Logger;	a	LOGGER
 	m	(Ljava/lang/String;Ljava/lang/String;)V	a	sendMessage
-		p	2	string2	message
-		p	1	string1	name
+		p	2		message
+		p	1		name
 	m	(Ljava/lang/String;)V	l	removeWhitelist
-		p	1	string	name
+		p	1		name
 	f	I	e	maxPlayers
 	f	Ljava/io/File;	m	whitelistFile
-	m	(Ljava/lang/String;)V	e	addOp
-		p	1	string	name
 	m	()V	n	saveWhitelist
-	m	(Ljava/lang/String;)V	c	banIp
-		p	1	string	ip
-	m	()V	l	saveOps
+	m	(Ljava/lang/String;)V	e	addOp
+		p	1		name
 	m	(Ljava/lang/String;)Z	g	isWhitelisted
-		p	1	string	name
+		p	1		name
+	m	()V	l	saveOps
+	m	(Ljava/lang/String;)V	c	banIp
+		p	1		ip
 	f	Z	o	whitelistEnabled
-	m	()V	j	saveIpBans
 	m	(Ljava/lang/String;)V	a	ban
-		p	1	string	name
+		p	1		name
+	m	()V	j	saveIpBans
 	m	()V	h	saveBans
-	f	Ljava/io/File;	k	bannedIpsFile
 	f	Ljava/util/List;	b	players
+	f	Ljava/io/File;	k	bannedIpsFile
 	m	(Lgt;)V	a	broadcast
 		p	1		packet
 	f	Ljava/util/Set;	f	banList
-	m	([Ldp;)V	a	a
-		p	1	arr	levels
 	m	(Ldl;)V	a	a
-		p	1	dl	player
-	f	Ljava/util/Set;	h	ops
+		p	1		player
+	m	([Ldp;)V	a	a
+		p	1		levels
 	m	(Lee;Ljava/lang/String;)Ldl;	a	a
 		p	1		connection
-		p	2	string	name
-	m	(Ldl;)V	c	c
-		p	1	dl	player
+		p	2		name
+	f	Ljava/util/Set;	h	ops
 	f	Lnet/minecraft/server/MinecraftServer;	c	server
-	m	(Ldl;)V	e	e
-		p	1	dl	player
+	m	(Ldl;)V	c	c
+		p	1		player
 	m	()Ljava/util/Set;	e	getWhitelist
+	m	(Ldl;)V	e	e
+		p	1		player
 	m	(Ljava/lang/String;)Ldl;	i	getPlayer
-		p	1	string	name
+		p	1		name
 	m	(Ldl;)V	g	g
-		p	1	dl	player
+		p	1		player
 	m	(Ljava/lang/String;)V	k	addWhitelist
-		p	1	string	name
+		p	1		name
 	m	()Ljava/lang/String;	c	getPlayerList
 	f	Ljava/io/File;	l	opsFile
-	m	(Ljava/lang/String;)V	f	removeOp
-		p	1	string	name
 	m	()V	m	loadWhitelist
-	m	(Ljava/lang/String;)V	d	unbanIp
-		p	1	string	ip
-	m	()V	k	loadOps
+	m	(Ljava/lang/String;)V	f	removeOp
+		p	1		name
 	m	(Ljava/lang/String;)Z	h	isOp
-		p	1	string	name
-	m	()V	i	loadIpBans
+		p	1		name
+	m	()V	k	loadOps
+	m	(Ljava/lang/String;)V	d	unbanIp
+		p	1		ip
 	m	(Ljava/lang/String;)V	b	unban
-		p	1	string	name
+		p	1		name
+	m	()V	i	loadIpBans
 	m	()V	g	loadBans
 	f	Ljava/io/File;	j	banListFile
 	m	(Lnet/minecraft/server/MinecraftServer;)V	<init>	<init>
 		p	1		server
-c	jh	net/minecraft/world/level/block/entity/BlockEntity
-	m	()Z	g	isRemoved
-	m	()V	g_	tick
-	f	I	g	z
-	m	()Lgt;	f	getUpdatePacket
-	m	(Liq;)Ljh;	c	create
-		p	0	iq	compound
-	f	I	f	y
-	f	I	e	x
-	f	Ldj;	d	level
-	m	(Ljava/lang/Class;Ljava/lang/String;)V	a	register
-		p	1	string	id
-		p	0	class1	clazz
-	m	()V	h	setRemoved
-	m	()V	j	clearRemoved
-	f	Z	h	removed
-	f	Ljava/util/Map;	a	idToClass
-	m	(Liq;)V	b	load
-		p	1	iq	compound
-	f	Ljava/util/Map;	b	classToId
-		c	This seems to be broken as the key is a class, but this method assumes it to be a string.
-	m	(Liq;)V	a	read
-		p	1	iq	compound
 c	nl	EntityTracker
-c	jk	net/minecraft/server/network/protocol/BidirectionalChatPacket
-	f	Ljava/lang/String;	a	message
-	m	(Ljava/lang/String;)V	<init>	<init>
-		p	1		message
-c	jl	net/minecraft/server/network/Connection
-	m	(Ljava/net/Socket;Ljava/lang/String;Lme;)V	<init>	<init>
-		p	1		socket
-		p	3		packetListener
-		p	2		name
-	f	Ljava/lang/Thread;	s	writeThread
-	m	(Lgt;)V	a	sendPacket
-		p	1	gt	packet
-	f	Ljava/net/SocketAddress;	i	address
-	m	()Ljava/net/SocketAddress;	c	getAddress
-	m	(Ljava/lang/Exception;)V	a	handleException
-		p	1	exception	exception
-	f	Ljava/io/DataOutputStream;	k	outputStream
-	m	(Lme;)V	a	setListener
-		p	1	me	listener
-	f	Ljava/lang/Object;	a	LOCK
-	f	Ljava/io/DataInputStream;	j	inputStream
-	f	Ljava/lang/Thread;	r	readThread
-	f	Ljava/net/Socket;	h	socket
-	f	Ljava/lang/Object;	g	lock
-	f	Lme;	p	packetListener
 c	fi	net/minecraft/server/gui/GuiLogFormatter
 	f	Lci;	a	handler
-	m	(Lci;)V	<init>	<init>
-		p	1		handler
 	m	(Ljava/util/logging/LogRecord;)Ljava/lang/String;	format	format
 		p	1		record
-c	jq	net/minecraft/nbt/IntTag
-	f	I	a	value
+	m	(Lci;)V	<init>	<init>
+		p	1		handler
+c	ns	net/minecraft/stats/Stat
 c	fo	net/minecraft/nbt/Tag
 	m	(Ljava/lang/String;)Lfo;	a	setName
-		p	1	string	name
+		p	1		name
 	m	(Lfo;Ljava/io/DataOutput;)V	a	writeNamedTag
-		p	0	fo	tag
-		p	1	dataOutput	dataOutput
-	m	(B)Lfo;	a	newTag
-		p	0	byte1	type
+		p	0		tag
+		p	1		dataOutput
 	m	()B	a	getId
-	m	(Ljava/io/DataInput;)Lfo;	b	readNamedTag
-		p	0	dataInput	dataInput
-	m	(B)Ljava/lang/String;	b	getTagName
-		p	0	byte1	type
-	m	()Ljava/lang/String;	b	getName
+	m	(B)Lfo;	a	newTag
+		p	0		type
 	m	(Ljava/io/DataOutput;)V	a	write
-		p	1	dataOutput	dataOutput
+		p	1		dataOutput
+	m	()Ljava/lang/String;	b	getName
+	m	(B)Ljava/lang/String;	b	getTagName
+		p	0		type
+	m	(Ljava/io/DataInput;)Lfo;	b	readNamedTag
+		p	0		dataInput
 	f	Ljava/lang/String;	a	name
 	m	(Ljava/io/DataInput;)V	a	load
-		p	1	dataInput	dataInput
-c	bq	net/minecraft/server/ServerThread
-	m	(Ljava/lang/String;Lnet/minecraft/server/MinecraftServer;)V	<init>	<init>
-		p	1		name
-		p	2		server
-	f	Lnet/minecraft/server/MinecraftServer;	a	server
-	m	()V	run	run
-c	bt	TimerHackThread
-	m	(Lnet/minecraft/server/MinecraftServer;)V	<init>	<init>
-		p	1		server
-	f	Lnet/minecraft/server/MinecraftServer;	a	server
-c	fy	ItemStack
-c	bx	net/minecraft/world/level/block/entity/SpawnerBlockEntity
-c	kb	net/minecraft/nbt/ByteTag
-	f	B	a	value
-	m	(B)V	<init>	<init>
-		p	1	byte1	value
+		p	1		dataInput
+c	fp	net/minecraft/world/entity/Mob
+	f	Llq;	d	target
+c	fq	net/minecraft/util/Mth
+	f	[F	a	SIN
+	m	(F)F	e	absFloor
+		p	0	float1	value
+	m	(F)F	c	sqrt
+		p	0	float1	value
+	m	(F)F	b	cos
+		p	0	float1	value
+	m	(F)I	d	floor
+		p	0	float1	value
+	m	(F)F	a	sin
+		p	0	float1	value
+	m	(D)F	a	sqrt
+		p	0	double1	value
+	m	(DD)D	a	absMax
+		p	2	double2	b
+		p	0	double1	a
+	m	(D)I	b	floor
+		p	0	double1	value
+c	ft	net/minecraft/world/item/crafting/ShapedRecipe
+	f	Lfy;	e	result
+	f	I	c	height
+	f	I	b	width
+	f	I	a	id
+	m	(II[Lfy;Lfy;)V	<init>	<init>
+		p	1	integer1	width
+		p	2	integer2	height
+		p	3	arr	input
+		p	4	fy	result
+	f	[Lfy;	d	input
+	m	(Lhz;IIZ)Z	a	a
+		p	1	hz	container
+c	oa	net/minecraft/util/Position
+	f	I	c	z
+	m	(Ljava/lang/Object;)Z	equals	equals
+		p	1	object	object
+	m	(III)V	<init>	<init>
+		p	2	integer2	y
+		p	1	integer1	x
+		p	3	integer3	z
+	f	I	b	y
+	f	I	a	x
+c	fx	net/minecraft/world/entity/player/Inventory
+	f	[Lfy;	a	items
+	f	Lem;	d	player
+	f	[Lfy;	b	armor
+	m	(Lem;)V	<init>	<init>
+		p	1	em	player
+	m	(Llr;)Llr;	a	save
+		p	1	lr	tag
+	f	I	c	selectedSlot
+	m	(Llr;)V	b	load
+		p	1	lr	tag
+	m	()Lfy;	b	getHeldItem
+c	fy	net/minecraft/world/item/ItemStack
+	m	(Lfy;)Z	c	matchesStack
+		p	1	fy	itemStack
+	m	(Lfy;)Lfy;	b	copy
+		p	0	fy	itemStack
+	m	(Lfy;)Z	d	matches
+		p	1	fy	itemStack
+	m	()I	h	getDamage
+	m	(Liq;)Liq;	a	save
+		p	1	iq	compound
+	f	I	d	damage
+	f	I	c	id
+	m	()I	b	getMaxStackSize
+	m	(Lna;)V	<init>	<init>
+		p	1	na	block
+	f	I	a	count
+	m	(I)V	b	damage
+		p	1	integer	damage
+	m	()Lej;	a	getItem
+	m	()Lfy;	j	copy
+	m	(Liq;)V	b	load
+		p	1	iq	compound
+	m	(Lna;I)V	<init>	<init>
+		p	1	na	block
+	m	(Lfy;)Z	a	isSame
+		p	1	fy	itemStack
+	m	(Lej;)V	<init>	<init>
+		p	1	ej	item
+c	oc	net/minecraft/world/entity/animal/Pig
+	m	()Z	x	hasSaddle
+	m	(Z)V	a	setSaddle
+		p	1	boolean1	hasSaddle
 c	oh	LogFormatter
 	f	Ljava/text/SimpleDateFormat;	a	DATE_FORMAT
 	m	(Ljava/util/logging/LogRecord;)Ljava/lang/String;	format	format
 		p	1		record
+c	gd	net/minecraft/world/phys/Type
+c	gg	net/minecraft/stats/Stats
+	m	()V	c	registerItemStats
+	m	()V	b	registerBlockStats
 c	oo	oo
 	f	Lnet/minecraft/server/MinecraftServer;	d	server
 	m	(Lnet/minecraft/server/MinecraftServer;II)V	<init>	<init>
@@ -450,31 +1207,15 @@ c	oo	oo
 c	gk	net/minecraft/world/level/block/entity/ChestBlockEntity
 c	ou	net/minecraft/nbt/StringTag
 	f	Ljava/lang/String;	a	value
-c	ci	net/minecraft/server/gui/LogHandler
-	m	()V	flush	flush
-	m	(Ljava/util/logging/LogRecord;)V	publish	publish
-		p	1		record
-	m	(Ljavax/swing/JTextArea;)V	<init>	<init>
-		p	1		textArea
-	m	()V	close	close
-	f	Ljavax/swing/JTextArea;	d	testArea
-	f	Ljava/util/logging/Formatter;	a	formatter
 c	ox	ox
 	m	(Ljl;)V	<init>	<init>
-		p	1	jl	connection
-c	i	net/minecraft/server/gui/PlayerListComponent
-	m	(Lnet/minecraft/server/MinecraftServer;)V	<init>	<init>
-		p	1		server
-	f	Lnet/minecraft/server/MinecraftServer;	a	server
-	f	I	b	tickCount
+		p	1		connection
 c	oy	net/minecraft/server/network/ConnectionWriteThread
 	m	(Ljl;Ljava/lang/String;)V	<init>	<init>
 		p	1		connection
 		p	2		name
 	f	Ljl;	a	connection
 	m	()V	run	run
-c	k	net/minecraft/nbt/FloatTag
-	f	F	a	value
 c	oz	net/minecraft/server/network/ConnectionReadThread
 	m	(Ljl;Ljava/lang/String;)V	<init>	<init>
 		p	1		connection
@@ -483,175 +1224,78 @@ c	oz	net/minecraft/server/network/ConnectionReadThread
 c	gt	net/minecraft/server/network/protocol/Packet
 	c	Represents a packet sent between a client and a server.
 	m	()I	b	getId
-	m	(I)Lgt;	a	getById
-		p	0	integer	id
 	m	(Ljava/lang/String;Ljava/io/DataOutputStream;)V	a	writeString
 		p	1		outputStream
 		p	0		string
+	m	(I)Lgt;	a	getById
+		p	0		id
 	m	(Ljava/io/DataOutputStream;)V	a	write
 		p	1		outputStream
-	m	(Ljava/io/DataInputStream;Z)Lgt;	a	a
-		p	0	dataInputStream	inputStream
 	m	(Ljava/io/DataInputStream;)V	a	read
 		p	1		inputStream
-	m	(IZZLjava/lang/Class;)V	a	register
-		p	3	class4	clazz
-		p	0	integer	packetId
+	m	(Ljava/io/DataInputStream;Z)Lgt;	a	a
+		p	0		inputStream
 	m	(Ljava/io/DataInputStream;I)Ljava/lang/String;	a	readString
 		p	1		length
 		p	0		inputStream
+	m	(IZZLjava/lang/Class;)V	a	register
+		p	3		clazz
+		p	0		packetId
 	f	Ljava/util/Map;	b	classToId
 	f	Ljava/util/Map;	a	idToClass
-	m	(Lgt;Ljava/io/DataOutputStream;)V	a	write
-		p	1	dataOutputStream	outputStream
-		p	0	gt	packet
 	m	(Lme;)V	a	handle
 		p	1		listener
-c	ky	net/minecraft/server/ServerProperties
-	m	()V	a	generate
-	m	(Ljava/lang/String;Z)V	b	set
-		p	2		value
-		p	1		key
-	m	(Ljava/io/File;)V	<init>	<init>
-		p	1		file
-	m	()V	b	save
-	m	(Ljava/lang/String;Z)Z	a	get
-		p	2		fallback
-		p	1		key
-	m	(Ljava/lang/String;I)I	a	get
-		p	1		key
-		p	2		fallback
-	m	(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;	a	get
-		p	1		key
-		p	2		fallback
-	f	Ljava/io/File;	c	file
-	f	Ljava/util/Properties;	b	properties
-	f	Ljava/util/logging/Logger;	a	LOGGER
-c	cr	net/minecraft/world/level/block/entity/JukeboxBlockEntity
-c	ct	net/minecraft/world/level/storage/LevelData
-	m	(JLjava/lang/String;)V	<init>	<init>
-		p	1	long1	seed
-		p	3	string	name
-	m	()I	k	getThunderTime
-	m	(III)V	a	setSpawn
+	m	(Lgt;Ljava/io/DataOutputStream;)V	a	write
+		p	1		outputStream
+		p	0		packet
+c	gu	net/minecraft/world/item/DyeItem
+	f	[I	bk	COLORS
+	f	[Ljava/lang/String;	a	COLOR_NAMES
+c	gv	net/minecraft/world/level/block/LockedChestBlock
+	m	(I)V	<init>	<init>
+		p	1	integer	id
+c	gx	net/minecraft/world/item/crafting/RecipeComparator
+	m	(Ljava/lang/Object;Ljava/lang/Object;)I	compare	compare
+		p	2	ck2	b
+		p	1	ck1	a
+	m	(Ley;)V	<init>	<init>
+		p	1	ey	recipeManager
+	f	Ley;	a	recipeManager
+c	pb	pb
+	m	(III)Ljh;	b	getBlockEntity
 		p	3	integer3	z
 		p	2	integer2	y
 		p	1	integer1	x
-	m	()I	m	getRainTime
-	m	(Z)V	b	setRaining
-		p	1	boolean1	raining
-	m	()Z	j	isThundering
-	m	(I)V	a	setVersion
-		p	1	integer	version
-	f	Z	l	raining
-	m	(I)V	c	setRainTime
-		p	1	integer	rainTime
-	m	(J)V	b	setSizeOnDisk
-		p	1	long1	size
-	f	Z	n	thundering
-	f	I	b	spawnX
-	m	()I	c	getSpawnX
-	f	I	d	spawnZ
-	m	()I	e	getSpawnZ
-	f	Ljava/lang/String;	j	name
-	f	J	f	lastPlayed
-	m	()J	g	getSizeOnDisk
-	m	()I	i	getVersion
-	f	I	k	version
-	m	(Z)V	a	setThundering
-		p	1	boolean1	thundering
-	f	I	m	rainTime
-	f	I	o	thunderTime
-	m	(Ljava/lang/String;)V	a	setName
-		p	1	string	name
-	m	()Z	l	isRaining
-	m	(I)V	b	setThunderTime
-		p	1	integer	thunderTime
-	m	(J)V	a	setTime
-		p	1	long1	time
-	f	J	a	seed
-	m	()J	b	getSeed
-	m	(Lct;)V	<init>	<init>
-		p	1	ct	levelData
-	f	I	c	spawnY
-	m	()I	d	getSpawnY
-	f	J	e	time
-	m	()J	f	getTime
-	f	Liq;	h	playerData
-	f	J	g	sizeOnDisk
-	m	()I	h	getDimension
-	m	(Liq;)V	<init>	<init>
-		p	1	iq	compound
-	f	I	i	dimension
-c	q	net/minecraft/server/gui/GuiCloseListener
-	f	Lnet/minecraft/server/MinecraftServer;	a	server
-	m	(Ljava/awt/event/WindowEvent;)V	windowClosing	windowClosing
-		p	1		event
-	m	(Lnet/minecraft/server/MinecraftServer;)V	<init>	<init>
-		p	1		server
-c	r	net/minecraft/server/gui/CommandAction
-	f	Lnf;	b	gui
-	f	Ljavax/swing/JTextField;	a	textField
-	m	(Lnf;Ljavax/swing/JTextField;)V	<init>	<init>
-		p	2		textField
-		p	1		gui
-	m	(Ljava/awt/event/ActionEvent;)V	actionPerformed	actionPerformed
-		p	1		event
-c	cu	net/minecraft/server/network/ServerConnectionListener
-	m	(Lee;)V	a	addPending
-		p	1		connection
-	f	Ljava/util/ArrayList;	h	listeners
-	f	Z	b	running
-	f	Lnet/minecraft/server/MinecraftServer;	c	server
-	f	Ljava/util/ArrayList;	g	pendingConnections
-	f	Ljava/net/ServerSocket;	d	socket
-	f	Ljava/lang/Thread;	e	listenThread
-	m	()V	a	tick
-	f	I	f	counter
-	m	(Lha;)V	a	addListener
-		p	1		listener
-	m	(Lnet/minecraft/server/MinecraftServer;Ljava/net/InetAddress;I)V	<init>	<init>
-		p	1		server
-		p	3		port
-		p	2		address
-	f	Ljava/util/logging/Logger;	a	LOGGER
+	m	(III)I	c	getMetadata
+		p	1	integer1	x
+		p	2	integer2	y
+		p	3	integer3	z
+	m	(III)I	a	getBlock
+		p	3	integer3	z
+		p	1	integer1	x
+		p	2	integer2	y
+	m	(III)Lhj;	d	getMaterial
 c	gy	net/minecraft/server/gui/StatsComponent
 	m	(Ljava/awt/Graphics;)V	paint	paint
 		p	1		graphics
-c	cv	net/minecraft/server/network/UsernameVerificationThread
-	f	Liv;	a	loginPacket
-	m	(Lee;Liv;)V	<init>	<init>
-		p	1	ee	connection
-		p	2	iv	loginPacket
-	m	()V	run	run
-	f	Lee;	b	connection
-c	s	net/minecraft/server/gui/FocusListener
-	m	(Lnf;)V	<init>	<init>
-		p	1		gui
-	m	(Ljava/awt/event/FocusEvent;)V	focusGained	focusGained
-		p	1		event
-	f	Lnf;	a	gui
-c	lb	net/minecraft/world/level/block/EntityBlock
-	m	()Ljh;	a_	getBlockEntity
-c	ld	net/minecraft/server/network/ConnectionListenThread
-	m	(Lcu;Ljava/lang/String;Lnet/minecraft/server/MinecraftServer;)V	<init>	<init>
-		p	1		connectionListener
-		p	2		name
-		p	3		server
-	f	Lcu;	b	connectionListener
-	f	Lnet/minecraft/server/MinecraftServer;	a	server
-	m	()V	run	run
+c	pi	net/minecraft/world/entity/monster/ZombiePigman
+	m	(Llq;)V	d	d
+		p	1	lq	entity
+	f	I	a	angerTicks
+	f	Lfy;	f	DEATH_LOOT
 c	ha	net/minecraft/server/network/ServerPacketListenerImpl
 	m	(Ljava/lang/String;)V	c	handleCommand
-		p	1	string	command
+		p	1		command
 	f	Ljava/util/logging/Logger;	a	LOGGER
 	f	Ljl;	b	connection
+	m	(Ljava/lang/String;)V	a	disconnect
+		p	1	string	reason
 	m	(Lgt;)V	b	send
 		p	1		packet
 	f	Lnet/minecraft/server/MinecraftServer;	d	server
-	f	Ldl;	e	player
 	m	(Lnet/minecraft/server/MinecraftServer;Ljl;Ldl;)V	<init>	<init>
-		p	2	jl	connection
+		p	2		connection
 		p	3		player
 		p	1		server
+	f	Ldl;	e	player
 c	hf	net/minecraft/nbt/EndTag
